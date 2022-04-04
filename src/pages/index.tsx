@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
       <main>
         <h1>Header</h1>
-
+        <p>xDDDDDDDDDDDDDDDddd</p>
         <p>Stronka</p>
       </main>
 
