@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout/Layout";
 import { GlobalStyles } from "@mui/material";
+import ThemeContextProvider from "../contexts/ThemeContextProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,9 +18,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           "*": { boxSizing: "border-box" },
         }}
       />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeContextProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeContextProvider>
     </>
   );
 }

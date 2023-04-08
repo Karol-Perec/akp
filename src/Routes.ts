@@ -1,25 +1,33 @@
+import { Whatshot } from "@mui/icons-material";
+import { ElementType } from "react";
+
 interface Page {
   label: string;
   path: string;
+  Icon: ElementType;
 }
 
-const ROUTES: Record<string, Page> = {
-  MAIN_PAGE: {
+const ROUTES: Page[] = [
+  {
     label: "Strona Główna",
     path: "/",
+    Icon: Whatshot,
   },
-  ABOUT_US: {
+  {
     label: "O Nas",
     path: "/o-nas",
+    Icon: Whatshot,
   },
-  OFFER: {
+  {
     label: "Oferta",
-    path: "/oferta"
+    path: "/oferta",
+    Icon: Whatshot,
   },
-  CONTACT: {
+  {
     label: "Kontakt",
     path: "/kontakt",
+    Icon: Whatshot,
   },
-};
+];
 
 export default ROUTES;

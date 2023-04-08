@@ -4,8 +4,7 @@ import { MouseEventHandler } from "react";
 import * as S from "./TopBar.styles";
 import Link from "next/link";
 import ROUTES from "../../../Routes";
-
-const pages = ["onas", "kontakt"];
+import ThemeToggler from "./ThemeToggler/ThemeToggler";
 
 interface TopBarProps {
   onDrawerToggleClick: MouseEventHandler<HTMLButtonElement>;
@@ -40,11 +39,14 @@ const TopBar = ({ onDrawerToggleClick }: TopBarProps) => {
               color: "white",
             }}
           >
-            {Object.values(ROUTES).map(({ path, label }) => (
+            {ROUTES.map(({ path, label }) => (
               <Link key={path} href={path} passHref>
                 <Button color="inherit">{label}</Button>
               </Link>
             ))}
+          </Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <ThemeToggler />
           </Box>
         </Toolbar>
       </Container>
